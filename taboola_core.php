@@ -5,9 +5,9 @@ class Taboola{
     function __construct(){
         if(!is_admin()){
             add_action('wp_head', array($this, 'head_script'), 10);
-            add_action('r_post_content', array($this, 'post_script'), 90);
+            //this is not the right hook, and I'm well aware of that
+            add_action('r_author_block', array($this, 'post_script'), 90);
             add_action('wp_footer', array($this, 'footer_script'), 10);
-
         }
     }
 
